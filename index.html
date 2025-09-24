@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trending Gadget — Limited Offer</title>
+  <style>
+    :root{
+      --bg:#f7f7f8;
+      --card:#ffffff;
+      --accent:#ff3b30;
+      --muted:#6b7280;
+      --maxw:820px;
+      --radius:16px;
+      font-family: Inter, system-ui, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#fbfcfd,var(--bg));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 10px 30px rgba(15,23,42,0.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:0;
+    }
+
+    /* left: product info */
+    .left{
+      padding:28px 32px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:600;font-size:13px}
+    h1{margin:0;font-size:22px;line-height:1.12}
+    .price{
+      display:flex;gap:14px;align-items:center;
+    }
+    .now{font-weight:800;font-size:20px;color:var(--accent)}
+    .old{font-size:14px;color:var(--muted);text-decoration:line-through}
+    ul{margin:0;padding-left:18px;color:#111827}
+    li{margin:8px 0}
+    .features{color:var(--muted);font-size:14px}
+    .cta-row{display:flex;gap:12px;align-items:center;margin-top:6px}
+    .cta{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:14px 18px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:16px;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(255,59,48,0.14);
+      text-decoration:none;
+    }
+    .small{font-size:13px;color:var(--muted)}
+    .trust{display:flex;gap:10px;align-items:center;margin-top:8px}
+    .trust img{height:28px;opacity:0.95}
+
+    /* right: image */
+    .right{
+      background:linear-gradient(180deg, #fff, #fff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+    }
+    .card-img{
+      width:100%;
+      max-width:360px;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 8px 30px rgba(12,13,14,0.06);
+      background:#fff;
+    }
+    .card-img img{display:block;width:100%;height:auto}
+
+    /* footer tiny */
+    .note{font-size:12px;color:var(--muted);margin-top:8px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .wrap{grid-template-columns:1fr; padding:0}
+      .right{order:-1;padding:18px}
+      .left{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <div class="left">
+      <span class="badge">Trending • USA</span>
+      <h1 id="title">Amazing 3-in-1 Phone Gadget — As Seen On TikTok</h1>
+
+      <div class="price">
+        <div class="now" id="price">$9.33</div>
+        <div class="old"><del>$13.40</del></div>
+      </div>
+
+      <p class="features" id="short">
+        Enhance your space with vibrant RGB lighting — adjustable, music-synchronized, and perfect for living rooms and bedrooms.
+      </p>
+
+      <ul>
+        <li>✅ RGB Multi-Color Options — Customize your ambiance effortlessly</li>
+        <li>✅ Music Synchronized Lighting — Lights dance to your favorite tunes</li>
+        <li>✅ Adjustable Brightness & Colors — Tailor the mood to your preference</li>
+        <li>✅ Easy Installation — Plug-and-play setup for quick enjoyment</li>
+        <li>✅ Ideal for Living Rooms & Bedrooms — Adds a modern touch to any room</li>
+      </ul>
+
+      <div class="cta-row">
+        <a id="buyBtn" class="cta" href="#" target="_blank" rel="noopener">Shop Now — Limited Stock</a>
+        <div class="small">Ships to <strong>USA</strong> • Free Shipping</div>
+      </div>
+
+      <div class="trust">
+        <img src="https://static.vecteezy.com/system/resources/previews/023/096/970/non_2x/stars-customer-product-rating-review-flat-icon-for-apps-and-websites-free-vector.jpg" alt="star" style="height:50px; width:auto;">
+        <div>
+          <div style="font-weight:700">4.7/5 — 3,142 reviews</div>
+          <div class="note">Secure checkout • 30-day returns</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <div class="card-img">
+        <!-- REPLACE THIS IMAGE URL with product image URL -->
+        <img id="productImage" src="https://img.kwcdn.com/product/fancy/09e04326-f3d3-4aab-bd9c-86bf0f748644.jpg?imageView2/2/w/800/q/70/format/webp" alt="Product image">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // === EDIT THESE TWO VALUES BEFORE PUBLISHING ===
+    const AFFILIATE_LINK = "https://temu.to/k/pc59m60d3c9";
+    // Optionally edit product title, price, image from here:
+    const PRODUCT_TITLE = "37/500044-key LED Smart Light Strip, RGB Multi-color Adjustable, Music Synchronized Color Change, Suitable for Living Room And Bedroom";
+    const PRICE_NOW = "$9.33";
+    const IMAGE_URL = "https://img.kwcdn.com/product/fancy/09e04326-f3d3-4aab-bd9c-86bf0f748644.jpg?imageView2/2/w/800/q/70/format/webp";
+
+    // Apply values to page
+    document.getElementById('buyBtn').href = AFFILIATE_LINK;
+    document.getElementById('title').textContent = PRODUCT_TITLE;
+    document.getElementById('price').textContent = PRICE_NOW;
+    document.getElementById('productImage').src = IMAGE_URL;
+
+    // Optional: simple click tracker (for local test)
+    document.getElementById('buyBtn').addEventListener('click', function(){
+      // you can add analytics here or pixel calls before redirecting if needed
+      // e.g., gtag('event', 'click', { label: 'shop-now' });
+    });
+  </script>
+</body>
+</html>
